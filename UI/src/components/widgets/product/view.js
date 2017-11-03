@@ -743,7 +743,6 @@
                 return metric.metricName === metricName;
             });
 
-            // set scores with a value of -1 to 0
             var sanitized_metric_data = zeroOutInvalidMetrics(filtered_metric_data);
 
             // return just the scores

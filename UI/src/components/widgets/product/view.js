@@ -167,7 +167,9 @@
                     }
                 });
                 teamScoreBoardData.totalScore = totalScore;
-                return teamScoreBoardData;
+                ctrl.scoreBoardData[i] = teamScoreBoardData;
+                teamScoreBoardData = {};
+
             });
 
             defineChartProperties();

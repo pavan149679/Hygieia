@@ -147,8 +147,8 @@
         }
 
         function populateScoreboardData() {
-            ctrl.scoreBoardData = ctrl.configuredTeams.map(function(configuredTeam) {
-                var teamScoreBoardData = {};
+            var teamScoreBoardData = {};
+            _(ctrl.configuredTeams).forEach(function(configuredTeam, i) {
                 teamScoreBoardData.collectorItemId = configuredTeam.collectorItemId;
                 teamScoreBoardData.name = configuredTeam.name;
                 teamScoreBoardData.data = [];
@@ -167,7 +167,9 @@
                     }
                 });
                 teamScoreBoardData.totalScore = totalScore;
-                return teamScoreBoardData;
+                ctrl.scoreBoardData[i] = teamScoreBoardData;
+                teamScoreBoardData = {};
+
             });
 
             defineChartProperties();

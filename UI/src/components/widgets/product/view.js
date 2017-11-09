@@ -126,8 +126,6 @@
                 stackBars: true,
                 centerLabels: true,
                 horizontalBars: true,
-                height: "220",
-                width: "80%",
                 axisX: {
                     showLabel: false,
                     showGrid: false,

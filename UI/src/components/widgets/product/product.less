@@ -402,12 +402,24 @@
         }
     }
 
+    //.ct-chart-bar .ct-horizontal-bars{
+    //  width: 1000px;
+    //}
+
     #gamification-view {
     .gamification-leaderboard {
       margin-top: 70px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+
+      .ct-chart{
+        //margin-left: 1000px;
+        width: 100%;
+      }
+
       ul {
         list-style-type: none;
-        margin-left: 200px;
       }
       .ct-legend {
         position: relative;
@@ -452,12 +464,6 @@
         }
       }
 
-          .ct-bar {
-            show-grid: false;
-            show-grid-background: false;
-            stroke-width: 30px;
-          }
-
           .generate-ct-series-colors(length(@ct-legend-colors));
 
           .generate-ct-series-colors(@n, @i : 0) when (@i <= @n) {
@@ -470,21 +476,34 @@
         }
         .gamification-table {
             margin-top: 100px;
-            width: 60%;
-            margin-left: 200px;
+            width: 80%;
+            margin-left: auto;
             margin-right: auto;
-            table, th, td {
-              border: 1px solid white;
-              text-align: center;
-              padding: 10px;
+
+            @dash-chart-alt-color:    contrast('blue');
+
+            td {
+                .text-standard;
+                vertical-align: top;
+                text-align: left;
+                padding: 1rem 1rem;
+                margin-right: 1rem;
             }
-            th {
-              background-color: #167F92;
-              opacity: 5;
-            }
-            .team-name {
+
+            th{
+              padding: 1rem 1rem;
+              vertical-align: bottom;
               text-align: left;
-              font-weight: bold;
+            }
+
+            tr {
+                .text-lg;
+                vertical-align: center;
+                text-align: center;
+
+                &:nth-child(even) {
+                    background: @dash-widget-section-highlight;
+                }
             }
         }
     }

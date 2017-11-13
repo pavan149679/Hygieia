@@ -485,10 +485,19 @@
                 margin-right: 1rem;
             }
 
-            th{
+            .header{
               padding: 1rem 1rem;
               vertical-align: bottom;
               text-align: left;
+
+              .generate-table-header-style(length(@ct-legend-colors));
+
+              .generate-table-header-style(@n, @index: 0) when (@index =< @n) {
+                &:nth-child(@{index}) {
+                  color: extract(@ct-legend-colors, @index - 1);
+                }
+                .generate-table-header-style(@n, (@index + 1));
+              }
             }
 
             tr {
